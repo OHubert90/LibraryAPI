@@ -46,5 +46,23 @@ namespace LibraryAPI.Controllers
             await _libraryService.AddBook(book);
             return CreatedAtAction(nameof(GetBook), new { id = book.Id }, book);
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateBook(int id, [FromBody]Book book)
+        {
+            if (id != book.Id)
+            {
+                return BadRequest();
+            }
+            await _libraryService.UpdateBook(book);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteBook(int id)
+        {
+            await _libraryService.DeleteBook(id);
+            return NoContent();
+        }
     }
 }

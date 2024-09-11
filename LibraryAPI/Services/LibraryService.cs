@@ -28,5 +28,15 @@ namespace LibraryAPI.Services
         {
             await _libraryRepository.AddBook(book);
         }
+
+        public async Task UpdateBook(Book book)
+        {
+            await _libraryRepository.UpdateBook(book);
+        }
+
+        public async Task DeleteBook(int id)
+        {
+            await _libraryRepository.DeleteBook(id);
+        }
     }
 }

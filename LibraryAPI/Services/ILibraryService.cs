@@ -9,5 +9,7 @@ namespace LibraryAPI.Services
         Task<Book> GetBook(int id);
         Task<IEnumerable<Book>> GetBooks();
         Task AddBook(Book book);
+        Task UpdateBook(Book book);
+        Task DeleteBook(int id);
     }
 }
